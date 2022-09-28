@@ -25,6 +25,7 @@ html, body{
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 2%;
 }
 
 /* ============ Cabeçalho do site ========== */
@@ -50,13 +51,6 @@ header h2{
     color: #878787;
 }
 
-.megasena > header{
-    background-image: linear-gradient( to bottom, #209869 30%, rgb(255, 255, 255));
-}
-.megasena > header h1{
-    word-spacing: 10px;
-    letter-spacing: 3px;
-}
 /* ============ Cabeçalho do site FIM ========== */
 
 
@@ -221,7 +215,7 @@ footer nav{
 footer nav ul li{
     display: inline-block;
     list-style-type: none;
-    margin: 0 10px 0 10px;
+    margin: 0 15px 0 15px;
 }
 
 footer nav ul a{
@@ -251,11 +245,11 @@ footer .nav-icons img{
     footer .nav-icons{
         display: block;
         position: relative;
-        margin-top: 10px;
+        margin-top: 25px;
     }
 
     footer .nav-icons img{
-        margin: 0 5px 0 5px;
+        margin: 0 10px 0 10px;
     }
 }
 
@@ -263,6 +257,7 @@ footer .nav-icons img{
     html, body{
         overflow: auto;
         min-height: 620px;
+        height: 100%;
     }
 
     footer{
@@ -270,3 +265,52 @@ footer .nav-icons img{
     }
 }
 /* ============ Rodapé do site END=========== */
+
+
+/* >>>>>>>>>>>>>>> Pagina MEGA SENA <<<<<<<<<<<<<<<<<<<<*/
+
+
+.megasena > header{
+    background-image: linear-gradient( to bottom, #209869 30%, rgb(255, 255, 255));
+    padding: 30px 0 30px 0;
+}
+.megasena > header h1{
+    word-spacing: 4px;
+    letter-spacing: 3px;
+
+}
+
+/* =========== Filtros para escolha dos números ============ */
+
+.content-megasena{
+    text-align: center;
+}
+
+.filtros-megasena{
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.filtros-megasena h2{
+    display: inline-block;
+    font-size: 16px;
+}
+
+.filtros-megasena span{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.filtros-megasena select{
+    width: 50px;
+    height: 30px;
+}
+
+.filtros-megasena input{
+    margin-top: 20px;
+    width: 20px;
+    height: 20px;
+    vertical-align: bottom;
+}

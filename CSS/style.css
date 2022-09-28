@@ -72,6 +72,7 @@ header h2{
     float: right;
     position: absolute;
     right: -10px;
+    top: 200px;
 }
 
 @media screen and (max-width: 880px){
@@ -273,11 +274,23 @@ footer .nav-icons img{
 .megasena > header{
     background-image: linear-gradient( to bottom, #209869 30%, rgb(255, 255, 255));
     padding: 30px 0 30px 0;
+    text-align: center;
 }
 .megasena > header h1{
     word-spacing: 4px;
     letter-spacing: 3px;
 
+}
+
+/* ========== botão voltar para a home ========= */
+header #back-home{
+    width: 150px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+header #back-home a{
+    text-decoration: none;
+    color: #000;
 }
 
 /* =========== Filtros para escolha dos números ============ */
@@ -306,6 +319,7 @@ footer .nav-icons img{
 .filtros-megasena select{
     width: 50px;
     height: 30px;
+    font-size: 18px;
 }
 
 .filtros-megasena input{
@@ -313,4 +327,100 @@ footer .nav-icons img{
     width: 20px;
     height: 20px;
     vertical-align: bottom;
+}
+
+/* ============ botão Gerar-resultado ============ */
+
+#gerar-resultado{
+    margin-top: 20px;
+    width: 200px;
+}
+
+.btn-gerar-result button {
+    --color: #560bad;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+    cursor: pointer;
+   }
+   
+   .btn-gerar-result button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 300px;
+    border-radius: 50%;
+   }
+   
+   .btn-gerar-result button:hover {
+    color: #fff;
+   }
+   
+   .btn-gerar-result button:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+   }
+   
+   .btn-gerar-result button:hover:before {
+    top: -30px;
+    left: -30px;
+   }
+   
+   .btn-gerar-result button:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+   }
+
+
+/* =========== Cartela de números ========= */
+
+.cartela{
+    background-color: #ccc;
+    position: relative;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+.coluna-single{
+    width: 16.6%;
+    float: left;
+    /* display: inline-block; */
+    position: relative;
+}
+
+.num-single{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 26px;
+    background-color: #1B9C20;
+    border-radius: 13px;
+    margin-top: 10px;
+    vertical-align: bottom;
+}
+
+.num-single span{
+    line-height: 26px;
+    color: #ffffff;
+    font-size: 16px;
 }

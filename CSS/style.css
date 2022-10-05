@@ -275,10 +275,16 @@ footer .nav-icons img{
     padding: 30px 0 30px 0;
     text-align: center;
 }
-.megasena > header h1{
+.megasena, .duplasena > header h1{
     word-spacing: 4px;
     letter-spacing: 3px;
 
+}
+
+.duplasena > header{
+    background-image: linear-gradient( to bottom, #02FF02 30%, rgb(255, 255, 255));
+    padding: 30px 0 30px 0;
+    text-align: center;
 }
 
 /* ========== botão voltar para a home ========= */
@@ -420,6 +426,34 @@ header #back-home a{
 }
 
 .num-single span{
+    line-height: 26px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+
+/* ========== numeros-sorteados-ordenados ============= */
+
+.numeros-sorteados-ordenados{
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.numeros-sorteados-ordenados .num-single-sorteado{
+    display: inline-block;
+    margin: 0 10px 10px 13px;
+    width: 26px;
+    height: 26px;
+    background-color: #560bad;
+    border-radius: 13px;
+}
+
+.num-single-sorteado span{
     line-height: 26px;
     color: #ffffff;
     font-size: 16px;

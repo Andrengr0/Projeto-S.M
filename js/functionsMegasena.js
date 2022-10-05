@@ -49,7 +49,7 @@ $(()=>{
             
             var i=0;
             while( i<qtdNumerosParaGerar){
-                var numGerado = getRandomArbitrary(1, 61);
+                var numGerado = getNumRandom(1, 61);
                 if(numerosSorteados.includes(numGerado) == false){
                     numerosSorteados.push(numGerado)
                     i++;
@@ -60,7 +60,7 @@ $(()=>{
 
             var i=0;
             while( i<qtdNumerosParaGerar){
-                var numGerado = getRandomArbitrary(1, 61);
+                var numGerado = getNumRandom(1, 61);
                 if(numerosSorteados.includes(numGerado) == false && verificaImpar(numGerado) == true){
                     numerosSorteados.push(numGerado)
                     i++;
@@ -70,7 +70,7 @@ $(()=>{
         }else if(idInput == 'numPares'){
             var i=0;
             while( i<qtdNumerosParaGerar){
-                var numGerado = getRandomArbitrary(1, 61);
+                var numGerado = getNumRandom(1, 61);
                 if(numerosSorteados.includes(numGerado) == false && verificaImpar(numGerado) == false){
                     numerosSorteados.push(numGerado)
                     i++;
@@ -84,11 +84,37 @@ $(()=>{
             $('#'+seletorParaID).css('background-color','#560BAD')
         }
 
-        //TODO: Criar efeito de rolagem até a cartela
+
+        // Efeito de rolagem para a cartela
+        var scroolCartela = $('.cartela').offset().top;
+        $('html,body').animate({'scrollTop':scroolCartela},800);
+
+
+        //Gerar sequencia de numeros sorteados
+
+        numerosSorteados.sort(function(a,b){
+            if(a < b){
+                return -1
+            }
+        })
+
+        $('.numeros-sorteados-ordenados').html('')
+        
+        for(var i=0; i<numerosSorteados.length; i++){
+            var contentNumSorteados = $('<div class="num-single-sorteado"></div>')
+            $('.numeros-sorteados-ordenados').append(contentNumSorteados)
+        }
+
+
+        for(var i=0; i<numerosSorteados.length; i++){
+            var span = $('<span>'+numerosSorteados[i]+'</span>')
+            $('.num-single-sorteado').eq(i).append(span);
+        }
+
     });
     
 
-    function getRandomArbitrary(min, max) {
+    function getNumRandom(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
       }
 

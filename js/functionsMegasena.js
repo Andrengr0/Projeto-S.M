@@ -1,5 +1,7 @@
 $(()=>{
 
+    $('html').css('overflow-y','auto');
+
     var href = $('#back-home a').attr('href');
     $('#back-home').click(function(){
         $.ajax({

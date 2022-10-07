@@ -267,7 +267,7 @@ footer .nav-icons img{
 /* ============ Rodapé do site END=========== */
 
 
-/* >>>>>>>>>>>>>>> Pagina MEGA SENA <<<<<<<<<<<<<<<<<<<<*/
+/* >>>>>>>>>>>>>>> Cabeçalho das paginas de loteria <<<<<<<<<<<<<<<<<<<<*/
 
 
 .megasena > header{
@@ -275,7 +275,7 @@ footer .nav-icons img{
     padding: 30px 0 30px 0;
     text-align: center;
 }
-.megasena, .duplasena > header h1{
+.megasena, .duplasena, .quina > header h1{
     word-spacing: 4px;
     letter-spacing: 3px;
 
@@ -283,6 +283,33 @@ footer .nav-icons img{
 
 .duplasena > header{
     background-image: linear-gradient( to bottom, #02FF02 30%, rgb(255, 255, 255));
+    padding: 30px 0 30px 0;
+    text-align: center;
+}
+.duplasena > header h1{
+    color: #560BAD;
+}
+
+.quina > header{
+    background-image: linear-gradient( to bottom, #260185 30%, rgb(255, 255, 255));
+    padding: 30px 0 30px 0;
+    text-align: center;
+}
+
+.lotomania > header{
+    background-image: linear-gradient( to bottom, #F39323 30%, rgb(255, 255, 255));
+    padding: 30px 0 30px 0;
+    text-align: center;
+}
+
+.lotofacil > header{
+    background-image: linear-gradient( to bottom, #93018A 30%, rgb(255, 255, 255));
+    padding: 30px 0 30px 0;
+    text-align: center;
+}
+
+.timemania > header{
+    background-image: linear-gradient( to bottom, #A61324 30%, rgb(255, 255, 255));
     padding: 30px 0 30px 0;
     text-align: center;
 }
@@ -301,34 +328,34 @@ header #back-home a{
 
 /* =========== Filtros para escolha dos números ============ */
 
-.content-megasena{
+.content{
     text-align: center;
 }
 
-.filtros-megasena{
+.filtros{
     width: 100%;
     max-width: 400px;
     text-align: center;
     margin: 0 auto;
 }
 
-.filtros-megasena h2{
+.filtros h2{
     display: inline-block;
     font-size: 16px;
 }
 
-.filtros-megasena span{
+.filtros span{
     font-size: 16px;
     font-weight: bold;
 }
 
-.filtros-megasena select{
+.filtros select{
     width: 50px;
     height: 30px;
     font-size: 18px;
 }
 
-.filtros-megasena input{
+.filtros input{
     margin-top: 20px;
     width: 20px;
     height: 20px;
@@ -395,7 +422,12 @@ header #back-home a{
 
 /* =========== Cartela de números ========= */
 
-.cartela{
+.cartela-megasena, 
+.cartela-duplasena,
+.cartela-quina,
+.cartela-lotomania,
+.cartela-lotofacil,
+.cartela-timemania{
     background-color: #ccc;
     position: relative;
     margin: 30px auto;
@@ -406,14 +438,33 @@ header #back-home a{
     padding-bottom: 10px;
 }
 
-.coluna-single{
-    width: 16.6%;
+.cartela-megasena > .num-single, 
+.cartela-lotomania > .num-single, 
+.cartela-quina > .num-single, 
+.cartela-duplasena > .num-single, 
+.cartela-lotofacil > .num-single,
+.cartela-timemania > .num-single{
     float: left;
-    /* display: inline-block; */
-    position: relative;
+    margin-top: 10px;
+    border-radius: 13px;
 }
 
-.num-single{
+.cartela-megasena > .num-single{
+    width: 16.6%;
+}
+
+.cartela-lotomania > .num-single, 
+.cartela-duplasena > .num-single, 
+.cartela-lotofacil > .num-single{
+    width: 20%;
+}
+
+.cartela-quina > .num-single, 
+.cartela-timemania > .num-single{
+    width: 12.5%;
+}
+
+.num-single > .num-single-wrapper{
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -421,11 +472,10 @@ header #back-home a{
     height: 26px;
     background-color: #1B9C20;
     border-radius: 13px;
-    margin-top: 10px;
     vertical-align: bottom;
 }
 
-.num-single span{
+.num-single-wrapper span{
     line-height: 26px;
     color: #ffffff;
     font-size: 16px;
@@ -457,4 +507,15 @@ header #back-home a{
     line-height: 26px;
     color: #ffffff;
     font-size: 16px;
+}
+
+
+/* ========== Time da loteria timemania =========== */
+
+.clube{
+    margin-top: 10px;
+    color: #560bad;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 50px;
 }

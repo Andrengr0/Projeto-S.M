@@ -13,9 +13,9 @@ $(()=>{
         return false;
     })
 
-    var qtdNumeros = $('#qtd-numeros-megasena')
+    var qtdNumeros = $('#qtd-numeros-lotofacil')
  
-    for(var i=6; i<=15; i++)(
+    for(var i=15; i<=20; i++)(
         qtdNumeros.append('<option value="+ item +">' + i + '</option>')
     )
 
@@ -40,9 +40,9 @@ $(()=>{
     // Gera cartela
     geraCartela();
     function geraCartela(){
-        $('.content').append('<div class="cartela-megasena"></div>');
-        for(var i=0; i<60; i++){
-            $('.cartela-megasena').append('<div class="num-single"></div>');
+        $('.content').append('<div class="cartela-lotofacil"></div>');
+        for(var i=0; i<25; i++){
+            $('.cartela-lotofacil').append('<div class="num-single"></div>');
         }
 
         var quantNumSingle = $('.num-single').length;
@@ -57,7 +57,7 @@ $(()=>{
             }
             $('.num-single-wrapper').eq(i).append('<span>'+numConvert+'</span>')
         }
-        $('.cartela-megasena').append('<div class="clear"></div>')
+        $('.cartela-lotofacil').append('<div class="clear"></div>')
 
         $('.content').append('<div class="numeros-sorteados-ordenados"></div>')
     }
@@ -71,14 +71,14 @@ $(()=>{
         
 
         idInput = $('input[name=option]:checked').val();
-        var qtdNumerosParaGerar = parseInt($('select#qtd-numeros-megasena option:checked').text());
+        var qtdNumerosParaGerar = parseInt($('select#qtd-numeros-lotofacil option:checked').text());
         var numerosSorteados = [];
         
         if(idInput == 'allNumbers'){
             
             var i=0;
             while( i<qtdNumerosParaGerar){
-                var numGerado = getNumRandom(0, 60);
+                var numGerado = getNumRandom(0, 25);
                 if(numerosSorteados.includes(numGerado) == false){
                     numerosSorteados.push(numGerado)
                     i++;
@@ -89,7 +89,7 @@ $(()=>{
 
             var i=0;
             while( i<qtdNumerosParaGerar){
-                var numGerado = getNumRandom(0, 60);
+                var numGerado = getNumRandom(0, 25);
                 if(numerosSorteados.includes(numGerado) == false && verificaImpar(numGerado) == true){
                     numerosSorteados.push(numGerado)
                     i++;
@@ -99,7 +99,7 @@ $(()=>{
         }else if(idInput == 'numPares'){
             var i=0;
             while( i<qtdNumerosParaGerar){
-                var numGerado = getNumRandom(0, 60);
+                var numGerado = getNumRandom(0, 25);
                 if(numerosSorteados.includes(numGerado) == false && verificaImpar(numGerado) == false){
                     numerosSorteados.push(numGerado)
                     i++;
@@ -115,7 +115,7 @@ $(()=>{
 
 
         // Efeito de rolagem para a cartela
-        var scroolCartela = $('.cartela-megasena').offset().top;
+        var scroolCartela = $('.cartela-lotofacil').offset().top;
         $('html,body').animate({'scrollTop':scroolCartela},800);
 
 

@@ -13,9 +13,9 @@ $(()=>{
         return false;
     })
 
-    var qtdNumeros = $('#qtd-numeros-megasena')
+    var qtdNumeros = $('#qtd-numeros-quina')
  
-    for(var i=6; i<=15; i++)(
+    for(var i=5; i<=15; i++)(
         qtdNumeros.append('<option value="+ item +">' + i + '</option>')
     )
 
@@ -27,9 +27,8 @@ $(()=>{
 
     //Função para verificar se é número impar
     function verificaImpar(num){
-        num += 1;
         var testaNum = num % 2;
-        if(testaNum != 0){
+        if(testaNum == 0){
             return true;
         }else{
             return false;
@@ -40,9 +39,9 @@ $(()=>{
     // Gera cartela
     geraCartela();
     function geraCartela(){
-        $('.content').append('<div class="cartela-megasena"></div>');
-        for(var i=0; i<60; i++){
-            $('.cartela-megasena').append('<div class="num-single"></div>');
+        $('.content').append('<div class="cartela-quina"></div>');
+        for(var i=0; i<80; i++){
+            $('.cartela-quina').append('<div class="num-single"></div>');
         }
 
         var quantNumSingle = $('.num-single').length;
@@ -57,7 +56,7 @@ $(()=>{
             }
             $('.num-single-wrapper').eq(i).append('<span>'+numConvert+'</span>')
         }
-        $('.cartela-megasena').append('<div class="clear"></div>')
+        $('.cartela-quina').append('<div class="clear"></div>')
 
         $('.content').append('<div class="numeros-sorteados-ordenados"></div>')
     }
@@ -71,14 +70,14 @@ $(()=>{
         
 
         idInput = $('input[name=option]:checked').val();
-        var qtdNumerosParaGerar = parseInt($('select#qtd-numeros-megasena option:checked').text());
+        var qtdNumerosParaGerar = parseInt($('select#qtd-numeros-quina option:checked').text());
         var numerosSorteados = [];
         
         if(idInput == 'allNumbers'){
             
             var i=0;
             while( i<qtdNumerosParaGerar){
-                var numGerado = getNumRandom(0, 60);
+                var numGerado = getNumRandom(0, 80);
                 if(numerosSorteados.includes(numGerado) == false){
                     numerosSorteados.push(numGerado)
                     i++;
@@ -89,7 +88,7 @@ $(()=>{
 
             var i=0;
             while( i<qtdNumerosParaGerar){
-                var numGerado = getNumRandom(0, 60);
+                var numGerado = getNumRandom(0, 80);
                 if(numerosSorteados.includes(numGerado) == false && verificaImpar(numGerado) == true){
                     numerosSorteados.push(numGerado)
                     i++;
@@ -99,7 +98,7 @@ $(()=>{
         }else if(idInput == 'numPares'){
             var i=0;
             while( i<qtdNumerosParaGerar){
-                var numGerado = getNumRandom(0, 60);
+                var numGerado = getNumRandom(0, 80);
                 if(numerosSorteados.includes(numGerado) == false && verificaImpar(numGerado) == false){
                     numerosSorteados.push(numGerado)
                     i++;
@@ -115,7 +114,7 @@ $(()=>{
 
 
         // Efeito de rolagem para a cartela
-        var scroolCartela = $('.cartela-megasena').offset().top;
+        var scroolCartela = $('.cartela-quina').offset().top;
         $('html,body').animate({'scrollTop':scroolCartela},800);
 
 

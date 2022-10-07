@@ -13,9 +13,9 @@ $(()=>{
         return false;
     })
 
-    var qtdNumeros = $('#qtd-numeros-megasena')
+    var qtdNumeros = $('#qtd-numeros-timemania')
  
-    for(var i=6; i<=15; i++)(
+    for(var i=10; i<=10; i++)(
         qtdNumeros.append('<option value="+ item +">' + i + '</option>')
     )
 
@@ -27,9 +27,8 @@ $(()=>{
 
     //Função para verificar se é número impar
     function verificaImpar(num){
-        num += 1;
         var testaNum = num % 2;
-        if(testaNum != 0){
+        if(testaNum == 0){
             return true;
         }else{
             return false;
@@ -40,9 +39,9 @@ $(()=>{
     // Gera cartela
     geraCartela();
     function geraCartela(){
-        $('.content').append('<div class="cartela-megasena"></div>');
-        for(var i=0; i<60; i++){
-            $('.cartela-megasena').append('<div class="num-single"></div>');
+        $('.content').append('<div class="cartela-timemania"></div>');
+        for(var i=0; i<80; i++){
+            $('.cartela-timemania').append('<div class="num-single"></div>');
         }
 
         var quantNumSingle = $('.num-single').length;
@@ -57,9 +56,12 @@ $(()=>{
             }
             $('.num-single-wrapper').eq(i).append('<span>'+numConvert+'</span>')
         }
-        $('.cartela-megasena').append('<div class="clear"></div>')
+        $('.cartela-timemania').append('<div class="clear"></div>')
 
         $('.content').append('<div class="numeros-sorteados-ordenados"></div>')
+
+        $('.content').append('<div class="clube"></div>');
+
     }
 
 
@@ -71,14 +73,14 @@ $(()=>{
         
 
         idInput = $('input[name=option]:checked').val();
-        var qtdNumerosParaGerar = parseInt($('select#qtd-numeros-megasena option:checked').text());
+        var qtdNumerosParaGerar = parseInt($('select#qtd-numeros-timemania option:checked').text());
         var numerosSorteados = [];
         
         if(idInput == 'allNumbers'){
             
             var i=0;
             while( i<qtdNumerosParaGerar){
-                var numGerado = getNumRandom(0, 60);
+                var numGerado = getNumRandom(0, 80);
                 if(numerosSorteados.includes(numGerado) == false){
                     numerosSorteados.push(numGerado)
                     i++;
@@ -89,7 +91,7 @@ $(()=>{
 
             var i=0;
             while( i<qtdNumerosParaGerar){
-                var numGerado = getNumRandom(0, 60);
+                var numGerado = getNumRandom(0, 80);
                 if(numerosSorteados.includes(numGerado) == false && verificaImpar(numGerado) == true){
                     numerosSorteados.push(numGerado)
                     i++;
@@ -99,7 +101,7 @@ $(()=>{
         }else if(idInput == 'numPares'){
             var i=0;
             while( i<qtdNumerosParaGerar){
-                var numGerado = getNumRandom(0, 60);
+                var numGerado = getNumRandom(0, 80);
                 if(numerosSorteados.includes(numGerado) == false && verificaImpar(numGerado) == false){
                     numerosSorteados.push(numGerado)
                     i++;
@@ -115,7 +117,7 @@ $(()=>{
 
 
         // Efeito de rolagem para a cartela
-        var scroolCartela = $('.cartela-megasena').offset().top;
+        var scroolCartela = $('.cartela-timemania').offset().top;
         $('html,body').animate({'scrollTop':scroolCartela},800);
 
 
@@ -144,6 +146,25 @@ $(()=>{
             var span = $('<span>'+numeroConvertido+'</span>')
             $('.num-single-sorteado').eq(i).append(span);
         }
+
+        var listaTimes = ["ABC - RN", "Altos - PI", "América - MG", "América - RN", "Aparecidense - GO",
+                        "Athlético - PR", "Atlético - AC", "Atlético - CE", "Atlético - GO", "Atlético-MG - MG",
+                        "Avaí - SC", "Bahia - BA", "Boa Esporte - MG", "Boa Vista - RJ", "Botafogo - PB", "Botafogo - RJ",
+                        "Botafogo - SP", "Bragantino - SP", "Brasil - RS", "Brasiliense - DF", "Brusque	- SC", "Campinense - PB",
+                        "Caxias	- RS", "Ceará - CE", "Chapecoense - SC", "Cianorte - PR", "Confiança - SE", "Corinthians - SP",
+                        "Coritiba - PR", "CRB - AL", "Criciúma - SC", "Cruzeiro	- MG", "CSA - AL", "Cuiabá - MT", "Ferroviária - SP",
+                        "Ferroviário - CE", "Figueirense - SC", "Flamengo - RJ", "Floresta - CE", "Fluminense - RJ", "Fortaleza - CE",
+                        "Goiás - GO", "Grêmio - RS", "Guarani - SP", "Imperatriz - MA", "Internacional - RS", "Ituano - SP", "Jacuipense - BA",
+                        "Joinville - SC", "Juazeirense - BA", "Juventude - RS", "Londrina - PR", "Luverdense - MT", "Manaus - AM",
+                        "Mirasol - SP", "Moto Club - MA", "Náutico - PE", "Novorizontino - SP", "Oeste - SP", "Operário	- PR",
+                        "Palmeiras - SP", "Paraná - PR", "Paysandu - PA", "Ponte Preta - SP", "Remo - PA", "Sampaio Corrêa - MA",
+                        "Santa Cruz - PE", "Santos - SP", "São Bento - SP", "São José - RS", "São Paulo	- SP", "São Raimundo - RR",
+                        "Sport Recife - PE", "Tombense - MG", "Treze - PB", "Vasco da Gama - RJ", "Vila Nova - GO", "Viória	- BA",
+                        "Volta Redonda - RJ", "Ypiranga	- RS"];
+        var numTimes = listaTimes.length;
+        var geraTime = getNumRandom(0, numTimes);
+        $('.clube').html("")
+        $('.clube').append(listaTimes[geraTime]);
 
     });
     

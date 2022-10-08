@@ -67,7 +67,7 @@ $(()=>{
 
         // Verifica os filtros
      
-        $('.num-single-wrapper').css('background-color','#1B9C20')
+        $('.num-single-wrapper').css('background-color','#ffffff')
         
 
         idInput = $('input[name=option]:checked').val();
@@ -110,7 +110,7 @@ $(()=>{
         //estiliza os números sorteados na cartela
         for(var i=0; i<numerosSorteados.length; i++){
             var seletorParaID = numerosSorteados[i];
-            $('.num-single-wrapper').eq(seletorParaID).css('background-color','#560BAD')
+            $('.num-single-wrapper').eq(seletorParaID).css('background-color','#fffb00')
         }
 
 
@@ -143,6 +143,7 @@ $(()=>{
             }
             var span = $('<span>'+numeroConvertido+'</span>')
             $('.num-single-sorteado').eq(i).append(span);
+            $('.num-single-sorteado span').css('font-weight','bold')
         }
 
     });

@@ -2,6 +2,7 @@ $(()=>{
 
     $('html').css('overflow-y','auto');
 
+    // função do botão de voltar a pagina home
     var href = $('#back-home a').attr('href');
     $('#back-home').click(function(){
         $.ajax({
@@ -13,6 +14,7 @@ $(()=>{
         return false;
     })
 
+    // inserir a quantidade de numeros a sortear da loteria escolhida
     var qtdNumeros = $('#qtd-numeros-quina')
  
     for(var i=5; i<=15; i++)(
@@ -61,18 +63,16 @@ $(()=>{
         $('.content').append('<div class="numeros-sorteados-ordenados"></div>')
     }
 
-
+    // função do botão de gerar resultado (números)
     $('.btn-gerar-result > #gerar-resultado').on('click', function() {
 
-        // Verifica os filtros
-     
         $('.num-single-wrapper').css('background-color','#ffffff')
-        
 
         idInput = $('input[name=option]:checked').val();
         var qtdNumerosParaGerar = parseInt($('select#qtd-numeros-quina option:checked').text());
         var numerosSorteados = [];
         
+        // Verifica os filtros
         if(idInput == 'allNumbers'){
             
             var i=0;
@@ -147,10 +147,8 @@ $(()=>{
 
     });
     
-
+    // função para gerar número randomico
     function getNumRandom(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
       }
-
-    
 })

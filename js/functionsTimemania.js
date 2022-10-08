@@ -15,7 +15,6 @@ $(()=>{
     })
 
     // inserir a quantidade de numeros a sortear da loteria escolhida
-
     var qtdNumeros = $('#qtd-numeros-timemania')
  
     for(var i=10; i<=10; i++)(
@@ -68,15 +67,13 @@ $(()=>{
     // função do botão de gerar resultado (números)
     $('.btn-gerar-result > #gerar-resultado').on('click', function() {
 
-        // Verifica os filtros
-     
         $('.num-single-wrapper').css('background-color','#ffffff')
         
-
         idInput = $('input[name=option]:checked').val();
         var qtdNumerosParaGerar = parseInt($('select#qtd-numeros-timemania option:checked').text());
         var numerosSorteados = [];
         
+        // Verifica os filtros
         if(idInput == 'allNumbers'){
             
             var i=0;
@@ -120,7 +117,6 @@ $(()=>{
         var scroolCartela = $('.cartela-timemania').offset().top;
         $('html,body').animate({'scrollTop':scroolCartela},800);
 
-
         //Gerar sequencia de numeros sorteados
         numerosSorteados.sort(function(a,b){
             if(a < b){
@@ -135,7 +131,6 @@ $(()=>{
             $('.numeros-sorteados-ordenados').append(contentNumSorteados)
         }
 
-
         for(var i=0; i<numerosSorteados.length; i++){
             var numero = (numerosSorteados[i] + 1);
             numeroConvertido = numero.toString();
@@ -148,7 +143,6 @@ $(()=>{
         }
 
         // lista de times para a timemania
-
         var listaTimes = ["ABC - RN", "Altos - PI", "América - MG", "América - RN", "Aparecidense - GO",
                         "Athlético - PR", "Atlético - AC", "Atlético - CE", "Atlético - GO", "Atlético-MG - MG",
                         "Avaí - SC", "Bahia - BA", "Boa Esporte - MG", "Boa Vista - RJ", "Botafogo - PB", "Botafogo - RJ",
@@ -167,13 +161,10 @@ $(()=>{
         var geraTime = getNumRandom(0, numTimes);
         $('.clube').html("")
         $('.clube').append(listaTimes[geraTime]);
-
     });
     
     // função para gerar número randomico
     function getNumRandom(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
       }
-
-    
 })

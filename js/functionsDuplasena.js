@@ -2,6 +2,7 @@ $(()=>{
 
     $('html').css('overflow-y','auto');
 
+    // função do botão de voltar a pagina home
     var href = $('#back-home a').attr('href');
     $('#back-home').click(function(){
         $.ajax({
@@ -13,6 +14,7 @@ $(()=>{
         return false;
     })
 
+    // inserir a quantidade de numeros a sortear da loteria escolhida
     var qtdNumeros = $('#qtd-numeros-duplasena')
  
     for(var i=6; i<=15; i++)(
@@ -35,7 +37,6 @@ $(()=>{
             return false;
         }
     }
-
 
     // Gera cartela
     geraCartela();
@@ -62,18 +63,16 @@ $(()=>{
         $('.content').append('<div class="numeros-sorteados-ordenados"></div>')
     }
 
-
+    // função do botão de gerar resultado (números)
     $('.btn-gerar-result > #gerar-resultado').on('click', function() {
 
-        // Verifica os filtros
-     
         $('.num-single-wrapper').css('background-color','#ffffff')
-        
 
         idInput = $('input[name=option]:checked').val();
         var qtdNumerosParaGerar = parseInt($('select#qtd-numeros-duplasena option:checked').text());
         var numerosSorteados = [];
         
+        // Verifica os filtros
         if(idInput == 'allNumbers'){
             
             var i=0;
@@ -118,9 +117,7 @@ $(()=>{
         var scroolCartela = $('.cartela-duplasena').offset().top;
         $('html,body').animate({'scrollTop':scroolCartela},800);
 
-
         //Gerar sequencia de numeros sorteados
-
         numerosSorteados.sort(function(a,b){
             if(a < b){
                 return -1
@@ -134,7 +131,6 @@ $(()=>{
             $('.numeros-sorteados-ordenados').append(contentNumSorteados)
         }
 
-
         for(var i=0; i<numerosSorteados.length; i++){
             var numero = (numerosSorteados[i] + 1);
             numeroConvertido = numero.toString();
@@ -145,13 +141,10 @@ $(()=>{
             $('.num-single-sorteado').eq(i).append(span);
             $('.num-single-sorteado span').css('font-weight','bold')
         }
-
     });
     
-
+    // função para gerar número randomico
     function getNumRandom(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
-      }
-
-    
+      }  
 })

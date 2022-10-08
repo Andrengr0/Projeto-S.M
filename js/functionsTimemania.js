@@ -2,6 +2,7 @@ $(()=>{
 
     $('html').css('overflow-y','auto');
 
+    // função do botão de voltar a pagina home
     var href = $('#back-home a').attr('href');
     $('#back-home').click(function(){
         $.ajax({
@@ -12,6 +13,8 @@ $(()=>{
         })
         return false;
     })
+
+    // inserir a quantidade de numeros a sortear da loteria escolhida
 
     var qtdNumeros = $('#qtd-numeros-timemania')
  
@@ -34,7 +37,6 @@ $(()=>{
             return false;
         }
     }
-
 
     // Gera cartela
     geraCartela();
@@ -61,10 +63,9 @@ $(()=>{
         $('.content').append('<div class="numeros-sorteados-ordenados"></div>')
 
         $('.content').append('<div class="clube"></div>');
-
     }
 
-
+    // função do botão de gerar resultado (números)
     $('.btn-gerar-result > #gerar-resultado').on('click', function() {
 
         // Verifica os filtros
@@ -115,14 +116,12 @@ $(()=>{
             $('.num-single-wrapper').eq(seletorParaID).css('background-color','#fffb00')
         }
 
-
         // Efeito de rolagem para a cartela
         var scroolCartela = $('.cartela-timemania').offset().top;
         $('html,body').animate({'scrollTop':scroolCartela},800);
 
 
         //Gerar sequencia de numeros sorteados
-
         numerosSorteados.sort(function(a,b){
             if(a < b){
                 return -1
@@ -148,6 +147,8 @@ $(()=>{
             $('.num-single-sorteado span').css('font-weight','bold')
         }
 
+        // lista de times para a timemania
+
         var listaTimes = ["ABC - RN", "Altos - PI", "América - MG", "América - RN", "Aparecidense - GO",
                         "Athlético - PR", "Atlético - AC", "Atlético - CE", "Atlético - GO", "Atlético-MG - MG",
                         "Avaí - SC", "Bahia - BA", "Boa Esporte - MG", "Boa Vista - RJ", "Botafogo - PB", "Botafogo - RJ",
@@ -169,7 +170,7 @@ $(()=>{
 
     });
     
-
+    // função para gerar número randomico
     function getNumRandom(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
       }

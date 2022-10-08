@@ -64,8 +64,12 @@ $(()=>{
 
         for(var i=0; i<quantNumSingle; i++){
             var numConvert = (i + 1);
-            if(numConvert.toString().length < 2){
+            numConvert = numConvert.toString();
+            if(numConvert.length < 2){
                 numConvert = '0' + numConvert;
+            }
+            if(numConvert == '100'){
+                numConvert = '00'
             }
             $('.num-single-wrapper').eq(i).append('<span>'+numConvert+'</span>')
         }
@@ -145,6 +149,9 @@ $(()=>{
             numeroConvertido = numero.toString();
             if(numeroConvertido.length < 2){
                 numeroConvertido = '0' + numeroConvertido;
+            }
+            if(numeroConvertido == '100'){
+                numeroConvertido = '00';
             }
             var span = $('<span>'+numeroConvertido+'</span>')
             $('.num-single-sorteado').eq(i).append(span);

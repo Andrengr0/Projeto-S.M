@@ -27,6 +27,17 @@ $(()=>{
         $("input[value=allNumbers]").prop("checked", true);
     }
 
+    //Funções para atacar o radio com o clique no titulo do filtro
+    $('.H2allNumbers').click(function(){
+        $("input[value=allNumbers]").prop("checked", true);
+    });
+    $('.H2impares').click(function(){
+        $("input[value=numImpares]").prop("checked", true);
+    });
+    $('.H2pares').click(function(){
+        $("input[value=numPares]").prop("checked", true);
+    });
+
     //Função para verificar se é número impar
     function verificaImpar(num){
         var testaNum = num % 2;

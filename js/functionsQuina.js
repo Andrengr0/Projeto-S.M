@@ -128,9 +128,7 @@ $(()=>{
         var scroolCartela = $('.cartela-quina').offset().top;
         $('html,body').animate({'scrollTop':scroolCartela},800);
 
-
         //Gerar sequencia de numeros sorteados
-
         numerosSorteados.sort(function(a,b){
             if(a < b){
                 return -1
@@ -144,7 +142,6 @@ $(()=>{
             $('.numeros-sorteados-ordenados').append(contentNumSorteados)
         }
 
-
         for(var i=0; i<numerosSorteados.length; i++){
             var numero = (numerosSorteados[i] + 1);
             numeroConvertido = numero.toString();
@@ -155,7 +152,6 @@ $(()=>{
             $('.num-single-sorteado').eq(i).append(span);
             $('.num-single-sorteado span').css('font-weight','bold')
         }
-
     });
     
     // função para gerar número randomico

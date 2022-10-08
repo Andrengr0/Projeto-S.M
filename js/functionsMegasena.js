@@ -74,6 +74,7 @@ $(()=>{
         $('.content').append('<div class="numeros-sorteados-ordenados"></div>')
     }
 
+    // função do botão de gerar resultado (números)
     $('.btn-gerar-result > #gerar-resultado').on('click', function() {
 
         $('.num-single-wrapper').css('background-color','#ffffff')
@@ -151,7 +152,6 @@ $(()=>{
             $('.num-single-sorteado').eq(i).append(span);
             $('.num-single-sorteado span').css('font-weight','bold')
         }
-
     });
     
     // função para gerar número randomico

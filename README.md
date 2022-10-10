@@ -2,7 +2,7 @@
 
 link: https://andrengr0.github.io/Projeto-S.M/
 
- Projeto para disciplina de Sistemas Multimídias
+ Projeto para disciplina de Sistemas Multimídias - Gerador de loterias
  
 Este projeto se trata do desenvolvimento de um site capaz de gerar números
 para algumas loterias, são elas: MegaSena, LotoFácil, Quina, TimeMania, DuplaSena e LotoMania.

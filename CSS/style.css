@@ -200,9 +200,13 @@ footer{
     width: 100%;
     padding: 10px 2%;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     background-color: #D9D9D9;
     text-align: center;
+}
+
+.footer-lotofacil{
+    margin-top: 15%;
 }
 
 footer nav{
@@ -242,6 +246,7 @@ footer .nav-icons img{
 }
 
 @media screen and (max-width: 768px){
+
     footer .nav-icons{
         display: block;
         position: relative;

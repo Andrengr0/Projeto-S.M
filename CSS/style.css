@@ -32,6 +32,7 @@ html, body{
 header{
     width: 100%;
     height: 190px;
+    text-align: center;
     padding: 40px 2% 0 2%;
     background-image: linear-gradient( to bottom, rgb(7, 198, 49) 30%, rgb(255, 255, 255));
 }
@@ -521,3 +522,38 @@ header #back-home a{
     font-weight: bold;
     margin-bottom: 50px;
 }
+
+
+/* ============ Seção da página Sobre =========== */
+
+.texto-sobre{
+    width: 100%;
+    max-width: 320px;
+    padding: 0 2%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.texto-sobre h2, .autores h2{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 20px;
+    color: #444444;
+}
+
+.texto-sobre p, .autores p{
+    margin-top: 10px;
+    font-size: 16px;
+    color: #727272;
+    text-align: justify;
+}
+
+.autores{
+    padding: 30px 2% 20px 2%;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+/* ============ Seção da página Sobre END=========== */

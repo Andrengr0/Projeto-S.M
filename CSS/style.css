@@ -80,6 +80,12 @@ header h2{
         display: none;
     }
 }
+
+@media screen and (max-width: 580px){
+    html, body{
+        overflow-y: auto;
+    }
+}
 /* ============ Imagens da lateral do site END ========= */
 
 /* ============ Seção da caixa dos botões (escolha de loteria) =========== */
